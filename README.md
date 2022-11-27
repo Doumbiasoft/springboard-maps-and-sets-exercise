@@ -37,7 +37,7 @@ m.set([1,2,3], false);
 
 Write a function called hasDuplicate which accepts an array and returns true or false if that array contains a duplicate
 
-```JavaScrpit
+```JavaScript
 
 hasDuplicate([1,3,2,1]) // true
 hasDuplicate([1,5,-1,4]) // false
@@ -48,7 +48,24 @@ hasDuplicate([1,5,-1,4]) // false
 
 Write a function called vowelCount which accepts a string and returns a map where the keys are numbers and the values are the count of the vowels in the string.
 
-```JavaScrpite
+```JavaScript
+
+const vowelCount = (str) => {
+  
+  const myVowelMap = new Map();
+  const vowels = ["a", "e", "i", "o", "u"];
+  for (let letter of str.toLowerCase()) {
+    if (vowels.includes(letter)) {
+      if (myVowelMap.has(letter)) {
+        myVowelMap.set(letter, (myVowelMap.get(letter) + 1));
+      } else {
+        myVowelMap.set(letter, 1);
+      }
+    }
+  }
+  return myVowelMap;
+}
+
 
 vowelCount('awesome') // Map { 'a' => 1, 'e' => 2, 'o' => 1 }
 vowelCount('Colt') // Map { 'o' => 1 }
