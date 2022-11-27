@@ -6,7 +6,7 @@ What does the following code return?
 
 ```JavaScript
 
-new Set([1,1,2,2,3,4])
+new Set([1,1,2,2,3,4]) // [1,2,3,4]
 
 ```
 
@@ -16,7 +16,7 @@ What does the following code return?
 
 ```JavaScript
 
-[...new Set("referee")].join("")
+[...new Set("referee")].join("") //ref
 
 ```
 
@@ -30,6 +30,11 @@ let m = new Map();
 m.set([1,2,3], true);
 m.set([1,2,3], false);
 
+//After execution
+
+0 : {Array(3) => true}
+1 : {Array(3) => false}
+
 ```
 
 
@@ -38,6 +43,10 @@ m.set([1,2,3], false);
 Write a function called hasDuplicate which accepts an array and returns true or false if that array contains a duplicate
 
 ```JavaScript
+
+const hasDuplicate = arr => {
+   return new Set(arr).size === arr.length? false : true
+}
 
 hasDuplicate([1,3,2,1]) // true
 hasDuplicate([1,5,-1,4]) // false
